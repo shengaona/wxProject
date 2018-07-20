@@ -1,0 +1,33 @@
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="100%" height="100%" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='menuTab'>
+    <view class='menuLis {{actIndex=="first"?"actColor":""}}' id='first' bindtap="changeMenu">彩铅画</view>
+    <view class='menuLis {{actIndex=="second"?"actColor":""}}' id='second' bindtap="changeMenu">水彩画</view>
+    <view class='menuLis {{actIndex=="third"?"actColor":""}}' id='third' bindtap="changeMenu">简笔画</view>
+  </view>
+  <scroll-view scroll-y style="flex:1;overflow:hidden;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view class='leassonListOut' wx:for="{{leassonList}}" wx:key="{{item.id}}">
+      <view class='leassonList' data-id="{{item.id}}"  bindtap="seeDetail">
+        <view class='listIn'>
+          <view class='leassonImg'>
+            <image src="{{item.imgUrl}}" class='leassonImgs' />
+          </view>
+          <view class='leassonTitle'>
+            <view class='title'>
+              {{item.title}}
+            </view>
+            <view class='author'>
+              作者：{{author}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

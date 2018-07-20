@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#faad14",
+    "navigationBarTitleText": "跟我一起零基础学彩铅",
+    "navigationBarTextStyle":"white"
+  }
+}
